@@ -240,7 +240,7 @@ class Evaluator:
                 "--BENCHMARK", "",
                 "--TRACKERS_FOLDER", save_dir,   # project/name
                 "--TRACKERS_TO_EVAL", "labels",  # project/name/labels
-                "--SPLIT_TO_EVAL", "train",
+                "--SPLIT_TO_EVAL", "test",
                 "--METRICS", "HOTA", "CLEAR", "Identity",
                 "--USE_PARALLEL", "True",
                 "--TRACKER_SUB_FOLDER", "",
@@ -328,11 +328,11 @@ class Evaluator:
 
 def parse_opt():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--yolo-model', type=str, default=WEIGHTS / 'yolov8n.pt', help='model.pt path(s)')
-    parser.add_argument('--reid-model', type=str, default=WEIGHTS / 'mobilenetv2_x1_4_dukemtmcreid.pt')
+    parser.add_argument('--yolo-model', type=str, default=WEIGHTS / 'yolov8x.pt', help='model.pt path(s)')
+    parser.add_argument('--reid-model', type=str, default=WEIGHTS / 'osnet_ain_x1_0_msmt17.pt')
     parser.add_argument('--tracking-method', type=str, default='deepocsort', help='strongsort, ocsort')
     parser.add_argument('--name', default='exp', help='save results to project/name')
-    parser.add_argument('--classes', nargs='+', type=str, default=['0'], help='filter by class: --classes 0, or --classes 0 2 3')
+    parser.add_argument('--classes', nargs='+', type=str, default=['0', '1'], help='filter by class: --classes 0, or --classes 0 2 3')
     parser.add_argument('--project', default=EXAMPLES / 'runs' / 'val', help='save results to project/name')
     parser.add_argument('--exist-ok', action='store_true', help='existing project/name ok, do not increment')
     parser.add_argument('--benchmark', type=str, default='MOT17-mini', help='MOT16, MOT17, MOT20')

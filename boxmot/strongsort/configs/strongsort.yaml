@@ -1,10 +1,13 @@
-ecc: true
-ema_alpha: 0.8962157769329083
-max_age: 40
-max_dist: 0.1594374041012136
-max_iou_dist: 0.5431835667667874
+# Trial number:      4
+# HOTA, MOTA, IDF1:  [79.983]
+conf: 0.4863385795084937
+ecc: false
+ema_alpha: 0.7106058152313204
+iou_thresh: 0.25237623864979053
+max_age: 30
+max_dist: 0.22112210986279932
+max_iou_dist: 0.5916193024795204
 max_unmatched_preds: 0
-mc_lambda: 0.995
-n_init: 3
+mc_lambda: 0.986593790687155
+n_init: 1
 nn_budget: 100
-conf_thres: 0.5122620708221085
